@@ -1,22 +1,68 @@
-let currentLang = 'en';
+const siteData = {
+    en: {
+        title: "Tazhib & Woodwork",
+        bio: "Showcasing the intersection of traditional Persian illumination and handcrafted wood.",
+        btn: "فارسی",
+        items: [
+            { 
+                title: "Traditional Tazhib", 
+                desc: "Gold leaf and hand-ground pigments.", 
+                img: "https://picsum.photos/600/800" // Replace with your image path
+            },
+            { 
+                title: "Hand-carved Walnut", 
+                desc: "Intricate wood carving project.", 
+                img: "https://picsum.photos/600/700" 
+            }
+        ]
+    },
+    fa: {
+        title: "تذهیب و هنر چوب",
+        bio: "نمایشگاهی از تذهیب‌های سنتی و ساخته‌های چوبی دست‌ساز.",
+        btn: "English",
+        items: [
+            { 
+                title: "تذهیب سنتی", 
+                desc: "ورق طلا و رنگ‌های معدنی.", 
+                img: "https://picsum.photos/600/800" 
+            },
+            { 
+                title: "تراش گردو", 
+                desc: "پروژه منبت‌کاری ظریف روی چوب گردو.", 
+                img: "https://picsum.photos/600/700" 
+            }
+        ]
+    }
+};
 
-async function loadContent(lang) {
-    const response = await fetch('content.json');
-    const data = await response.json();
-    const content = data[lang];
+let lang = 'en';
 
-    // Update Text
-    document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        el.innerText = content[key];
-    });
-
-    // Update Direction
-    document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+function render() {
+    const data = siteData[lang];
+    
+    // Update text
+    document.getElementById('main-title').innerText = data.title;
+    document.getElementById('main-bio').innerText = data.bio;
+    document.getElementById('lang-switch').innerText = data.btn;
+    
+    // Update direction
+    document.documentElement.dir = (lang === 'fa' ? 'rtl' : 'ltr');
+    
+    // Render Gallery
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = data.items.map(item => `
+        <div class="card">
+            <img src="${item.img}" alt="${item.title}">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+        </div>
+    `).join('');
 }
 
-document.getElementById('lang-switch').addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'fa' : 'en';
-    loadContent(currentLang);
-    document.getElementById('lang-switch').innerText = currentLang === 'en' ? 'فارسی' : 'English';
-});
+document.getElementById('lang-switch').onclick = () => {
+    lang = (lang === 'en' ? 'fa' : 'en');
+    render();
+};
+
+// Initial Render
+render();
