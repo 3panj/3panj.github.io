@@ -1,43 +1,73 @@
 :root {
-    --bg-color: #fcfaf7; /* Creamy paper feel */
-    --text-color: #2c2c2c;
-    --accent: #b8860b; /* Gold for Tazhib feel */
+    --bg: #faf9f6;
+    --text: #1a1a1a;
+    --accent: #b8860b;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    transition: all 0.3s ease;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    font-family: 'Georgia', serif; /* Elegant serif for art */
+    transition: 0.3s ease;
 }
 
-/* RTL Support */
 [dir="rtl"] {
-    font-family: 'Tahoma', 'Vazir', sans-serif;
-    text-align: right;
+    font-family: 'Tahoma', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#lang-switch {
+    background: none;
+    border: 1px solid var(--text);
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1rem;
 }
 
 #gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 0 10% 100px 10%;
 }
 
 .card {
-    border: 1px solid #ddd;
-    overflow: hidden;
     background: white;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .card img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: auto;
+    display: block;
+    filter: sepia(10%) contrast(105%); /* Subtle artistic filter */
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9rem;
 }
