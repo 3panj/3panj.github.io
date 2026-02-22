@@ -1,0 +1,18 @@
+{
+  "en": {
+    "welcome": "The Art of Precision",
+    "bio": "Traditional Persian Illumination and Handcrafted Wood.",
+    "items": [
+      {"title": "Floral Tazhib", "img": "assets/images/tazhib1.jpg"},
+      {"title": "Walnut Jewelry Box", "img": "assets/images/wood1.jpg"}
+    ]
+  },
+  "fa": {
+    "welcome": "هنر ظرافت",
+    "bio": "تذهیب سنتی و دست‌سازه‌های چوبی",
+    "items": [
+      {"title": "تذهیب گل و مرغ", "img": "assets/images/tazhib1.jpg"},
+      {"title": "جعبه جواهرات گردو", "img": "assets/images/wood1.jpg"}
+    ]
+  }
+}
