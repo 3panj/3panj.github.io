@@ -7,12 +7,12 @@ const siteData = {
             { 
                 title: "Traditional Tazhib", 
                 desc: "Gold leaf and hand-ground pigments.", 
-                img: "https://picsum.photos/600/800" // Replace with your image path
+                img: "https://raw.githubusercontent.com/3panj/3panj.github.io/refs/heads/main/assets/images/tazhib1.jpg" // Replace with your image path
             },
             { 
                 title: "Hand-carved Walnut", 
                 desc: "Intricate wood carving project.", 
-                img: "https://picsum.photos/600/700" 
+                img: "https://raw.githubusercontent.com/3panj/3panj.github.io/refs/heads/main/assets/images/tazhib1.jpg" 
             }
         ]
     },
@@ -24,12 +24,12 @@ const siteData = {
             { 
                 title: "تذهیب سنتی", 
                 desc: "ورق طلا و رنگ‌های معدنی.", 
-                img: "https://picsum.photos/600/800" 
+                img: "https://raw.githubusercontent.com/3panj/3panj.github.io/refs/heads/main/assets/images/wood1.jpg" 
             },
             { 
                 title: "تراش گردو", 
                 desc: "پروژه منبت‌کاری ظریف روی چوب گردو.", 
-                img: "https://picsum.photos/600/700" 
+                img: "https://raw.githubusercontent.com/3panj/3panj.github.io/refs/heads/main/assets/images/wood1.jpg" 
             }
         ]
     }
